@@ -14,7 +14,7 @@ class Character
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="bigint")
      * @ORM\generatedValue(strategy="AUTO")
      */
     protected $id;

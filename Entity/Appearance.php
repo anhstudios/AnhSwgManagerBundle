@@ -18,7 +18,7 @@ class Appearance
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="bigint")
      * @ORM\generatedValue(strategy="AUTO")
      */
     protected $id;
@@ -33,6 +33,11 @@ class Appearance
      * @ORM\Column(type="float")
      */
     protected $scale;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $bitMask;
 
     /**
      * @ORM\OneToOne(targetEntity="Entity")
