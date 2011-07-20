@@ -27,4 +27,34 @@ class Entity
      * @ORM\JoinColumn(name="template_id", referencedColumnName="id")
      */
     protected $template;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set template
+     *
+     * @param Anh\SwgManagerBundle\Entity\EntityTemplate $template
+     */
+    public function setTemplate(\Anh\SwgManagerBundle\Entity\EntityTemplate $template)
+    {
+        $this->template = $template;
+    }
+
+    /**
+     * Get template
+     *
+     * @return Anh\SwgManagerBundle\Entity\EntityTemplate 
+     */
+    public function getTemplate()
+    {
+        return $this->template;
+    }
 }

@@ -54,4 +54,64 @@ class Player
     {
         return $this->id;
     }
+
+    /**
+     * Set referenceId
+     *
+     * @param integer $referenceId
+     */
+    public function setReferenceId($referenceId)
+    {
+        $this->referenceId = $referenceId;
+    }
+
+    /**
+     * Get referenceId
+     *
+     * @return integer 
+     */
+    public function getReferenceId()
+    {
+        return $this->referenceId;
+    }
+
+    /**
+     * Set maxCharacters
+     *
+     * @param integer $maxCharacters
+     */
+    public function setMaxCharacters($maxCharacters)
+    {
+        $this->maxCharacters = $maxCharacters;
+    }
+
+    /**
+     * Get maxCharacters
+     *
+     * @return integer 
+     */
+    public function getMaxCharacters()
+    {
+        return $this->maxCharacters;
+    }
+
+    /**
+     * Add characters
+     *
+     * @param Anh\SwgManagerBundle\Entity\Character $characters
+     */
+    public function addCharacters(\Anh\SwgManagerBundle\Entity\Character $characters)
+    {
+        $this->characters[] = $characters;
+    }
+
+    /**
+     * Get characters
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getCharacters()
+    {
+        return $this->characters;
+    }
 }

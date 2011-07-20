@@ -32,4 +32,78 @@ class EntityTemplate
      * @ORM\JoinTable(name="templates_components")
      */
     protected $components;
+    public function __construct()
+    {
+        $this->components = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set label
+     *
+     * @param string $label
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
+    }
+
+    /**
+     * Get label
+     *
+     * @return string 
+     */
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    /**
+     * Set description
+     *
+     * @param text $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Get description
+     *
+     * @return text 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Add components
+     *
+     * @param Anh\SwgManagerBundle\Entity\Component $components
+     */
+    public function addComponents(\Anh\SwgManagerBundle\Entity\Component $components)
+    {
+        $this->components[] = $components;
+    }
+
+    /**
+     * Get components
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getComponents()
+    {
+        return $this->components;
+    }
 }

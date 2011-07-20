@@ -39,4 +39,74 @@ class Appearance
      * @ORM\JoinColumn(name="entity_id", referencedColumnName="id")
      */
     protected $entity;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set baseModel
+     *
+     * @param string $baseModel
+     */
+    public function setBaseModel($baseModel)
+    {
+        $this->baseModel = $baseModel;
+    }
+
+    /**
+     * Get baseModel
+     *
+     * @return string 
+     */
+    public function getBaseModel()
+    {
+        return $this->baseModel;
+    }
+
+    /**
+     * Set scale
+     *
+     * @param float $scale
+     */
+    public function setScale($scale)
+    {
+        $this->scale = $scale;
+    }
+
+    /**
+     * Get scale
+     *
+     * @return float 
+     */
+    public function getScale()
+    {
+        return $this->scale;
+    }
+
+    /**
+     * Set entity
+     *
+     * @param Anh\SwgManagerBundle\Entity\Entity $entity
+     */
+    public function setEntity(\Anh\SwgManagerBundle\Entity\Entity $entity)
+    {
+        $this->entity = $entity;
+    }
+
+    /**
+     * Get entity
+     *
+     * @return Anh\SwgManagerBundle\Entity\Entity 
+     */
+    public function getEntity()
+    {
+        return $this->entity;
+    }
 }

@@ -46,4 +46,98 @@ class Scene
      *      )
      */
     protected $entities;
+    public function __construct()
+    {
+        $this->entities = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param text $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Get description
+     *
+     * @return text 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set terrain
+     *
+     * @param string $terrain
+     */
+    public function setTerrain($terrain)
+    {
+        $this->terrain = $terrain;
+    }
+
+    /**
+     * Get terrain
+     *
+     * @return string 
+     */
+    public function getTerrain()
+    {
+        return $this->terrain;
+    }
+
+    /**
+     * Add entities
+     *
+     * @param Anh\SwgManagerBundle\Entity\Entity $entities
+     */
+    public function addEntities(\Anh\SwgManagerBundle\Entity\Entity $entities)
+    {
+        $this->entities[] = $entities;
+    }
+
+    /**
+     * Get entities
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getEntities()
+    {
+        return $this->entities;
+    }
 }
