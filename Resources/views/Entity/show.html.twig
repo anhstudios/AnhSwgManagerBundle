@@ -1,0 +1,27 @@
+<h1>Entity</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>                <td>{{ entity.id }}</td>        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('entity') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('entity_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('entity_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

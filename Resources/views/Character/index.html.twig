@@ -1,0 +1,49 @@
+<h1>Character list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Createdat</th>
+            <th>Updatedat</th>
+            <th>Deletedat</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Jedistate</th>
+            <th>Birthdate</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('character_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.deletedAt|date('Y-m-d H:i:s') }}</td>
+            <td>{{ entity.firstName }}</td>
+            <td>{{ entity.lastName }}</td>
+            <td>{{ entity.jediState }}</td>
+            <td>{{ entity.birthDate|date('Y-m-d H:i:s') }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('character_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('character_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('character_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
