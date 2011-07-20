@@ -1,7 +1,27 @@
-galaxy_manager_galaxy:
-    resource: "@AnhGalaxyManagerBundle/Controller/GalaxyController.php"
+swg_manager_appearance:
+    resource: "@AnhSwgManagerBundle/Controller/AppearanceController.php"
     type: annotation
 
-galaxy_manager_service:
-    resource: "@AnhGalaxyManagerBundle/Controller/ServiceController.php"
+swg_manager_character:
+    resource: "@AnhSwgManagerBundle/Controller/CharacterController.php"
+    type: annotation
+
+swg_manager_component:
+    resource: "@AnhSwgManagerBundle/Controller/ComponentController.php"
+    type: annotation
+
+swg_manager_entity:
+    resource: "@AnhSwgManagerBundle/Controller/EntityController.php"
+    type: annotation
+
+swg_manager_entity_template:
+    resource: "@AnhSwgManagerBundle/Controller/EntityTemplateController.php"
+    type: annotation
+
+swg_manager_player:
+    resource: "@AnhSwgManagerBundle/Controller/PlayerController.php"
+    type: annotation
+
+swg_manager_scene:
+    resource: "@AnhSwgManagerBundle/Controller/SceneController.php"
     type: annotation
