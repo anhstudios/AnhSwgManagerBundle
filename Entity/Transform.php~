@@ -1,0 +1,63 @@
+<?php
+/**
+ * Represents a transform component
+ *
+ * Copyright (c) 2011 Kyle Craviotto <kyle@anhstudios.com>
+ */
+
+namespace Anh\SwgManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="transform")
+ */
+class Transform
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\generatedValue(strategy="AUTO")
+     */
+    protected $location_id;
+        
+    /**
+     *  @ORM\Column(type="integer")
+     *  @ORM\JoinColumn(name="entity_id", referencedColumnName="id")
+     */
+    protected $entity_id;   
+    
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $x;   
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $y; 
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $z; 
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $oX;   
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $oY; 
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $oZ; 
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $oW; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $planet_id;  
+    
+}

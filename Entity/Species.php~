@@ -1,0 +1,106 @@
+<?php
+/**
+ * Represents a species object
+ *
+ * Copyright (c) 2011 Kyle Craviotto <kyle@anhstudios.com>
+ */
+
+namespace Anh\SwgManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="species")
+ */
+class Species
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\generatedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     *  @ORM\Column(type="string", length=100)
+     */
+    protected $species_name;   
+    
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $health_min;  
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $health_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $strength_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $strength_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $constitution_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $constitution_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $action_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $action_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $quickness_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $quickness_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $stamina_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $stamina_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $mind_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $mind_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $focus_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $focus_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $willpower_min; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $willpower_max; 
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $total;    
+    
+}

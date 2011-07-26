@@ -1,0 +1,29 @@
+<?php
+/**
+ * Represents a Profane Name
+ *
+ * Copyright (c) 2011 Kyle Craviotto <kyle@anhstudios.com>
+ */
+
+namespace Anh\SwgManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="name_profane")
+ */
+class NameProfane
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\generatedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     *  @ORM\Column(type="string", length=100)
+     */
+    protected $name;    
+    
+}
