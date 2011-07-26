@@ -19,10 +19,10 @@ class Transform
      * @ORM\Column(type="integer")
      * @ORM\generatedValue(strategy="AUTO")
      */
-    protected $location_id;
+    protected $id;
         
     /**
-     *  @ORM\Column(type="integer")
+     *  @ORM\Column(type="bigint")
      *  @ORM\JoinColumn(name="entity_id", referencedColumnName="id")
      */
     protected $entity_id;   
@@ -249,5 +249,15 @@ class Transform
     public function getPlanetId()
     {
         return $this->planet_id;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
