@@ -1,0 +1,59 @@
+<?php
+/**
+ * Represents a starting location
+ *
+ * Copyright (c) 2011 Kyle Craviotto <kyle@anhstudios.com>
+ */
+
+namespace Anh\SwgManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="starting_location")
+ */
+class StartingLocation
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\generatedValue(strategy="AUTO")
+     */
+    protected $location_id;
+    
+    /**
+     *  @ORM\Column(type="string", length=100)
+     */
+    protected $location;   
+    
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $planet_id;   
+    
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $x;   
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $y; 
+    /**
+     *  @ORM\Column(type="float")
+     */
+    protected $z; 
+    /**
+     *  @ORM\Column(type="string", length=100)
+     */
+    protected $description; 
+        /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $radius;  
+        /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $heading;      
+    
+}
