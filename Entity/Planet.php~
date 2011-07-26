@@ -31,4 +31,54 @@ class Planet
      */
     protected $terrainMap;   
     
+
+    /**
+     * Get planet_id
+     *
+     * @return integer 
+     */
+    public function getPlanetId()
+    {
+        return $this->planet_id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set terrainMap
+     *
+     * @param string $terrainMap
+     */
+    public function setTerrainMap($terrainMap)
+    {
+        $this->terrainMap = $terrainMap;
+    }
+
+    /**
+     * Get terrainMap
+     *
+     * @return string 
+     */
+    public function getTerrainMap()
+    {
+        return $this->terrainMap;
+    }
 }

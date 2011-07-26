@@ -62,4 +62,24 @@ class Entity
     {
         return $this->template;
     }
+
+    /**
+     * Set parent_id
+     *
+     * @param bigint $parentId
+     */
+    public function setParentId($parentId)
+    {
+        $this->parent_id = $parentId;
+    }
+
+    /**
+     * Get parent_id
+     *
+     * @return bigint 
+     */
+    public function getParentId()
+    {
+        return $this->parent_id;
+    }
 }
