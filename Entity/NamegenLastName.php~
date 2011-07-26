@@ -1,0 +1,33 @@
+<?php
+/**
+ * Represents a Last Name for Name Generation
+ *
+ * Copyright (c) 2011 Kyle Craviotto <kyle@anhstudios.com>
+ */
+
+namespace Anh\SwgManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="namegen_lastname")
+ */
+class NamegenLastName
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $lastname;
+    
+    /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $species;   
+    
+     /**
+     *  @ORM\Column(type="integer")
+     */
+    protected $gender;   
+    
+}
