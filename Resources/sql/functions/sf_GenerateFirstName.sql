@@ -3,7 +3,7 @@ CREATE FUNCTION `sf_GenerateFirstName`(start_species CHAR(16), start_gender INT(
 BEGIN
     DECLARE gen_firstname CHAR(16);
     DECLARE raceId INT(8);
-
+      
     SELECT id FROM species WHERE species_name = start_species INTO raceId;
 
     SELECT firstname FROM namegen_firstname WHERE species = raceId AND gender = start_gender ORDER BY RAND() LIMIT 1 INTO gen_firstname;

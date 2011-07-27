@@ -1,5 +1,5 @@
 DROP FUNCTION IF EXISTS `sf_CharacterNameCreate`;
-CREATE FUNCTION `sf_CharacterNameCreate`(base_model_string CHAR(64)) RETURNS char(64) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_CharacterNameCreate`(base_model_string CHAR(64)) RETURNS char(64) CHARSET utf8
 BEGIN
 	DECLARE shortSpecies CHAR(16);
 	DECLARE gender INT(11);
@@ -22,4 +22,5 @@ BEGIN
 	SELECT CONCAT_WS(' ',gen_firstname,gen_lastname) INTO gen_fullname;
 
 	RETURN gen_fullname;
-END;
+
+	END;
