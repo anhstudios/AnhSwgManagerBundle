@@ -3,8 +3,8 @@ CREATE FUNCTION `sf_SpeciesShort`(species CHAR(128)) RETURNS char(128) CHARSET u
 BEGIN
    	DECLARE SpeciesShort CHAR(128);
 
-    SET species = REPLACE(species,'object/creature/player/shared_','object/creature/player/');
+    	SET species = REPLACE(species,'object/creature/player/shared_','object/creature/player/');
 
-	SELECT SUBSTRING_INDEX(TRIM(LEADING 'object/creature/player/' FROM species),'_',1) INTO SpeciesShort;
-	RETURN speciesShort;
+		SELECT SUBSTRING_INDEX(TRIM(LEADING 'object/creature/player/' FROM species),'_',1) INTO SpeciesShort;
+		RETURN speciesShort;
 END;
