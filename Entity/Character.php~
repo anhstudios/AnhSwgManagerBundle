@@ -234,4 +234,24 @@ class Character
     {
         return $this->entity;
     }
+
+    /**
+     * Set archived
+     *
+     * @param integer $archived
+     */
+    public function setArchived($archived)
+    {
+        $this->archived = $archived;
+    }
+
+    /**
+     * Get archived
+     *
+     * @return integer 
+     */
+    public function getArchived()
+    {
+        return $this->archived;
+    }
 }

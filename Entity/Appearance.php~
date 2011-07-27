@@ -33,11 +33,22 @@ class Appearance
      * @ORM\Column(type="float")
      */
     protected $scale;
-
+    
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $gender;
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $species;
+    
+     /**
      * @ORM\Column(type="text")
      */
-    protected $bitMask;
+    protected $customization_data;
+          
 
     /**
      * @ORM\OneToOne(targetEntity="Entity")

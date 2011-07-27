@@ -33,11 +33,22 @@ class Appearance
      * @ORM\Column(type="float")
      */
     protected $scale;
-
+    
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $gender;
+    
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $species;
+    
+     /**
      * @ORM\Column(type="text")
      */
-    protected $bitMask;
+    protected $customization_data;
+          
 
     /**
      * @ORM\OneToOne(targetEntity="Entity")
@@ -133,5 +144,65 @@ class Appearance
     public function getBitMask()
     {
         return $this->bitMask;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param integer $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return integer 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set species
+     *
+     * @param string $species
+     */
+    public function setSpecies($species)
+    {
+        $this->species = $species;
+    }
+
+    /**
+     * Get species
+     *
+     * @return string 
+     */
+    public function getSpecies()
+    {
+        return $this->species;
+    }
+
+    /**
+     * Set customization_data
+     *
+     * @param text $customizationData
+     */
+    public function setCustomizationData($customizationData)
+    {
+        $this->customization_data = $customizationData;
+    }
+
+    /**
+     * Get customization_data
+     *
+     * @return text 
+     */
+    public function getCustomizationData()
+    {
+        return $this->customization_data;
     }
 }

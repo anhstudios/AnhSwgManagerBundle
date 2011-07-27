@@ -30,4 +30,64 @@ class NamegenFirstName
      */
     protected $gender;   
     
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string 
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set species
+     *
+     * @param integer $species
+     */
+    public function setSpecies($species)
+    {
+        $this->species = $species;
+    }
+
+    /**
+     * Get species
+     *
+     * @return integer 
+     */
+    public function getSpecies()
+    {
+        return $this->species;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param integer $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return integer 
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
 }
