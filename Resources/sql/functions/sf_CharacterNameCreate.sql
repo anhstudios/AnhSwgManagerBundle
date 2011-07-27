@@ -19,7 +19,7 @@ BEGIN
     IF shortSpecies = 'wookiee' THEN SET gen_lastname = NULL;
     END IF;
 
-    IF gen_lastname != NULL THEN SELECT CONCAT_WS(' ', gen_firstname, gen_lastname) INTO gen_fullname;
+    IF gen_lastname IS NOT NULL THEN SELECT CONCAT_WS(' ', gen_firstname, gen_lastname) INTO gen_fullname;
     ELSE SET gen_fullname = gen_firstname;
     END IF;
 
