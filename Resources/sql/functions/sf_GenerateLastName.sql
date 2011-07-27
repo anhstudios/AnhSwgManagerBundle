@@ -6,7 +6,6 @@ BEGIN
 
     SELECT id FROM species WHERE species_name = start_species INTO raceId;
 
-
     SELECT lastname FROM namegen_lastname WHERE species = raceId AND gender = start_gender ORDER BY RAND() LIMIT 1 INTO gen_lastname;
 
     RETURN gen_lastname;

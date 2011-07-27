@@ -1,0 +1,20 @@
+
+INSERT INTO `starting_location` (`location_id`, `location`, `planet_id`, `x`, `y`, `z`, `description`, `radius`, `heading`) VALUES
+(1, 'bestine', 9, -1290, 0, -3590, 'Bestine, Tatooine', 3, 180),
+(2, 'mos_espa', 9, -2902, 0, 2130, 'Mos Espa, Tatooine', 3, 180),
+(3, 'mos_eisley', 9, 3528, 0, -4804, 'Mos Eisley, Tatooine', 3, 180),
+(4, 'mos_entha', 9, 1291, 0, 3138, 'Mos Entha, Tatooine', 3, 180),
+(5, 'coronet', 1, -137, 0, -4723, 'Coronet, Corellia', 3, 180),
+(6, 'tyrena', 1, -5045, 0, -2294, 'Tyrena, Corellia', 3, 180),
+(7, 'kor_vella', 1, -3138, 0, 2808, 'Kor Vella, Corellia', 3, 180),
+(8, 'doaba_guerfel', 1, 3336, 0, 5525, 'Doaba Guerfel, Corellia', 3, 180),
+(9, 'dearic', 8, 335, 0, -2931, 'Dearic, Talus', 3, 180),
+(10, 'nashal', 8, 4371, 0, 5165, 'Nashal, Talus', 3, 180),
+(11, 'narmle', 7, -5310, 0, -2221, 'Narmle, Rori', 3, 180),
+(12, 'restuss', 7, 5362, 0, 5663, 'Restuss, Rori', 3, 180),
+(13, 'theed', 6, -4856, 0, 4162, 'Theed, Naboo', 3, 180),
+(14, 'moenia', 6, 4800, 0, -4700, 'Moenia, Naboo', 3, 180),
+(15, 'keren', 6, 1441, 0, 2771, 'Keren, Naboo', 3, 180),
+(16, 'kaadara', 6, 5209, 0, 6677, 'Kaadara, Naboo', 3, 180),
+(17, 'tutorial', 42, 0, 0, 0, 'Tutorial', 3, 180),
+(18, 'default_location', 42, 27.4, -42, -161.100006, 'Skipped Tutorial', 3, 180);

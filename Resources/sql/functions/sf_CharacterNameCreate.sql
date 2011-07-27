@@ -1,5 +1,5 @@
 DROP FUNCTION IF EXISTS `sf_CharacterNameCreate`;
-CREATE FUNCTION `sf_CharacterNameCreate`(base_model_string CHAR(64)) RETURNS char(64) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `sf_CharacterNameCreate`(base_model_string CHAR(64)) RETURNS char(64) CHARSET utf8
 BEGIN
 	DECLARE shortSpecies CHAR(16);
 	DECLARE gender INT(11);
@@ -19,7 +19,10 @@ BEGIN
     IF shortSpecies = 'wookiee' THEN SET gen_lastname = NULL;
     END IF;
 
-	SELECT CONCAT_WS(' ',gen_firstname,gen_lastname) INTO gen_fullname;
+    IF gen_lastname IS NOT NULL THEN SELECT CONCAT_WS(' ', gen_firstname, gen_lastname) INTO gen_fullname;
+    ELSE SET gen_fullname = gen_firstname;
+    END IF;
 
 	RETURN gen_fullname;
-END;
+
+	END;
