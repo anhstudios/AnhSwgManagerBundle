@@ -6,19 +6,20 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="characters")
+ * @ORM\Table(name="player_character")
  *
  * Normally we don't use the plural form however in this case "character" is a reserved mysql keyword.
  */
-class Character
+class PlayerCharacter
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="bigint")
-     * @ORM\generatedValue(strategy="AUTO")
+      * @ORM\generatedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Object")
+     * @ORM\JoinColumn(name="object_id", referencedColumnName="id")
      */
-    protected $id;
-
+    protected $object;
+    
     /**
      * @ORM\Column(type="datetime")
      */
@@ -30,19 +31,9 @@ class Character
     protected $updatedAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable="true")
      */
     protected $deletedAt;
-
-    /**
-     * @ORM\Column(type="string", length="100")
-     */
-    protected $firstName;
-
-    /**
-     * @ORM\Column(type="string", length="100")
-     */
-    protected $lastName;
     
     /**
      * @ORM\Column(type="integer")
@@ -60,20 +51,10 @@ class Character
     protected $archived;
 
     /**
-     * @ORM\OneToOne(targetEntity="Entity")
-     * @ORM\JoinColumn(name="entity_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Player")
+     * @ORM\JoinColumn(name="player_id", referencedColumnName="id")
      */
-    protected $entity;
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $player;
 
     /**
      * Set createdAt
@@ -136,46 +117,6 @@ class Character
     }
 
     /**
-     * Set firstName
-     *
-     * @param string $firstName
-     */
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * Get firstName
-     *
-     * @return string 
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * Set lastName
-     *
-     * @param string $lastName
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-    }
-
-    /**
-     * Get lastName
-     *
-     * @return string 
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
      * Set jediState
      *
      * @param integer $jediState
@@ -216,23 +157,23 @@ class Character
     }
 
     /**
-     * Set entity
+     * Set scene object
      *
-     * @param Anh\SwgManagerBundle\Entity\Entity $entity
+     * @param \Anh\SwgManagerBundle\Entity\SceneObject $sceneObject
      */
-    public function setEntity(\Anh\SwgManagerBundle\Entity\Entity $entity)
+    public function setEntity(\Anh\SwgManagerBundle\Entity\SceneObject $sceneObject)
     {
-        $this->entity = $entity;
+        $this->sceneObject = $sceneObject;
     }
 
     /**
-     * Get entity
+     * Get scene object
      *
-     * @return Anh\SwgManagerBundle\Entity\Entity 
+     * @return Anh\SwgManagerBundle\Entity\SceneObject
      */
-    public function getEntity()
+    public function getSceneObject()
     {
-        return $this->entity;
+        return $this->sceneObject;
     }
 
     /**
@@ -253,5 +194,55 @@ class Character
     public function getArchived()
     {
         return $this->archived;
+    }
+
+    /**
+     * Set sceneObject
+     *
+     * @param Anh\SwgManagerBundle\Entity\SceneObject $sceneObject
+     */
+    public function setSceneObject(\Anh\SwgManagerBundle\Entity\SceneObject $sceneObject)
+    {
+        $this->sceneObject = $sceneObject;
+    }
+
+    /**
+     * Set player
+     *
+     * @param Anh\SwgManagerBundle\Entity\Player $player
+     */
+    public function setPlayer(\Anh\SwgManagerBundle\Entity\Player $player)
+    {
+        $this->player = $player;
+    }
+
+    /**
+     * Get player
+     *
+     * @return Anh\SwgManagerBundle\Entity\Player 
+     */
+    public function getPlayer()
+    {
+        return $this->player;
+    }
+
+    /**
+     * Set object
+     *
+     * @param Anh\SwgManagerBundle\Entity\Object $object
+     */
+    public function setObject(\Anh\SwgManagerBundle\Entity\Object $object)
+    {
+        $this->object = $object;
+    }
+
+    /**
+     * Get object
+     *
+     * @return Anh\SwgManagerBundle\Entity\Object 
+     */
+    public function getObject()
+    {
+        return $this->object;
     }
 }

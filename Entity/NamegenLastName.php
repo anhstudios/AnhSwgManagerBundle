@@ -16,6 +16,12 @@ class NamegenLastName
 {
     /**
      * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\generatedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
      * @ORM\Column(type="string", length=100)
      */
     protected $lastname;
@@ -89,5 +95,15 @@ class NamegenLastName
     public function getGender()
     {
         return $this->gender;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

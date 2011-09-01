@@ -29,6 +29,11 @@ class Scene
     protected $name;
 
     /**
+     * @ORM\Column(type="string", length="255")
+     */
+    protected $label;
+
+    /**
      * @ORM\Column(type="text")
      */
     protected $description;
@@ -39,13 +44,14 @@ class Scene
     protected $terrain;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Entity")
-     * @ORM\JoinTable(name="scenes_entities",
+     * @ORM\ManyToMany(targetEntity="Object")
+     * @ORM\JoinTable(name="scenes_objects",
      *      joinColumns={@ORM\JoinColumn(name="scene_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="entity_id", referencedColumnName="id", unique=true)}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="object_id", referencedColumnName="id", unique=true)}
      *      )
      */
-    protected $entities;
+    protected $objects;
+
     public function __construct()
     {
         $this->entities = new \Doctrine\Common\Collections\ArrayCollection();
@@ -79,6 +85,26 @@ class Scene
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set label
+     *
+     * @param string $label
+     */
+    public function setLabel($label)
+    {
+        $this->label = $label;
+    }
+
+    /**
+     * Get label
+     *
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
     }
 
     /**
@@ -122,22 +148,42 @@ class Scene
     }
 
     /**
-     * Add entities
+     * Add sceneObjects
      *
-     * @param Anh\SwgManagerBundle\Entity\Entity $entities
+     * @param Anh\SwgManagerBundle\Entity\SceneObject $sceneObjects
      */
-    public function addEntities(\Anh\SwgManagerBundle\Entity\Entity $entities)
+    public function addSceneObjects(\Anh\SwgManagerBundle\Entity\SceneObject $sceneObjects)
     {
-        $this->entities[] = $entities;
+        $this->sceneObjects[] = $sceneObjects;
     }
 
     /**
-     * Get entities
+     * Get sceneObjects
      *
      * @return Doctrine\Common\Collections\Collection 
      */
-    public function getEntities()
+    public function getSceneObjects()
     {
-        return $this->entities;
+        return $this->sceneObjects;
+    }
+
+    /**
+     * Add objects
+     *
+     * @param Anh\SwgManagerBundle\Entity\Object $objects
+     */
+    public function addObjects(\Anh\SwgManagerBundle\Entity\Object $objects)
+    {
+        $this->objects[] = $objects;
+    }
+
+    /**
+     * Get objects
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getObjects()
+    {
+        return $this->objects;
     }
 }

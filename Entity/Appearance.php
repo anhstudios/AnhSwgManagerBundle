@@ -18,16 +18,11 @@ class Appearance
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="bigint")
-     * @ORM\generatedValue(strategy="AUTO")
+      * @ORM\generatedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Object")
+     * @ORM\JoinColumn(name="object_id", referencedColumnName="id")
      */
-    protected $id;
-
-    // Appearance columns here.
-    /**
-     * @ORM\Column(type="string", length="255")
-     */
-    protected $baseModel;
+    protected $object;
 
     /**
      * @ORM\Column(type="float")
@@ -49,43 +44,6 @@ class Appearance
      */
     protected $customization_data;
           
-
-    /**
-     * @ORM\OneToOne(targetEntity="Entity")
-     * @ORM\JoinColumn(name="entity_id", referencedColumnName="id")
-     */
-    protected $entity;
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set baseModel
-     *
-     * @param string $baseModel
-     */
-    public function setBaseModel($baseModel)
-    {
-        $this->baseModel = $baseModel;
-    }
-
-    /**
-     * Get baseModel
-     *
-     * @return string 
-     */
-    public function getBaseModel()
-    {
-        return $this->baseModel;
-    }
-
     /**
      * Set scale
      *
@@ -104,46 +62,6 @@ class Appearance
     public function getScale()
     {
         return $this->scale;
-    }
-
-    /**
-     * Set entity
-     *
-     * @param Anh\SwgManagerBundle\Entity\Entity $entity
-     */
-    public function setEntity(\Anh\SwgManagerBundle\Entity\Entity $entity)
-    {
-        $this->entity = $entity;
-    }
-
-    /**
-     * Get entity
-     *
-     * @return Anh\SwgManagerBundle\Entity\Entity 
-     */
-    public function getEntity()
-    {
-        return $this->entity;
-    }
-
-    /**
-     * Set bitMask
-     *
-     * @param text $bitMask
-     */
-    public function setBitMask($bitMask)
-    {
-        $this->bitMask = $bitMask;
-    }
-
-    /**
-     * Get bitMask
-     *
-     * @return text 
-     */
-    public function getBitMask()
-    {
-        return $this->bitMask;
     }
 
     /**
@@ -204,5 +122,45 @@ class Appearance
     public function getCustomizationData()
     {
         return $this->customization_data;
+    }
+
+    /**
+     * Set sceneObject
+     *
+     * @param Anh\SwgManagerBundle\Entity\SceneObject $sceneObject
+     */
+    public function setSceneObject(\Anh\SwgManagerBundle\Entity\SceneObject $sceneObject)
+    {
+        $this->sceneObject = $sceneObject;
+    }
+
+    /**
+     * Get sceneObject
+     *
+     * @return Anh\SwgManagerBundle\Entity\SceneObject 
+     */
+    public function getSceneObject()
+    {
+        return $this->sceneObject;
+    }
+
+    /**
+     * Set object
+     *
+     * @param Anh\SwgManagerBundle\Entity\Object $object
+     */
+    public function setObject(\Anh\SwgManagerBundle\Entity\Object $object)
+    {
+        $this->object = $object;
+    }
+
+    /**
+     * Get object
+     *
+     * @return Anh\SwgManagerBundle\Entity\Object 
+     */
+    public function getObject()
+    {
+        return $this->object;
     }
 }

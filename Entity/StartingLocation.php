@@ -27,31 +27,37 @@ class StartingLocation
     protected $location;   
     
     /**
-     *  @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Scene")
+     * @ORM\JoinColumn(name="scene_id", referencedColumnName="id")
      */
-    protected $planet_id;   
+    protected $scene;
     
     /**
      *  @ORM\Column(type="float")
      */
-    protected $x;   
+    protected $x;
+
     /**
      *  @ORM\Column(type="float")
      */
-    protected $y; 
+    protected $y;
+
     /**
      *  @ORM\Column(type="float")
      */
-    protected $z; 
+    protected $z;
+
     /**
      *  @ORM\Column(type="string", length=100)
      */
-    protected $description; 
-        /**
+    protected $description;
+
+    /**
      *  @ORM\Column(type="integer")
      */
-    protected $radius;  
-        /**
+    protected $radius;
+
+    /**
      *  @ORM\Column(type="integer")
      */
     protected $heading;      
@@ -225,5 +231,25 @@ class StartingLocation
     public function getHeading()
     {
         return $this->heading;
+    }
+
+    /**
+     * Set scene
+     *
+     * @param Anh\SwgManagerBundle\Entity\Scene $scene
+     */
+    public function setScene(\Anh\SwgManagerBundle\Entity\Scene $scene)
+    {
+        $this->scene = $scene;
+    }
+
+    /**
+     * Get scene
+     *
+     * @return Anh\SwgManagerBundle\Entity\Scene 
+     */
+    public function getScene()
+    {
+        return $this->scene;
     }
 }

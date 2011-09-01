@@ -17,14 +17,9 @@ class Player
     /**
      * @ORM\Id
      * @ORM\Column(type="bigint")
-     * @ORM\generatedValue(strategy="AUTO")
+     * @ORM\generatedValue(strategy="NONE")
      */
     protected $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $referenceId;
 
     /**
      * @ORM\Column(type="integer")
@@ -32,13 +27,13 @@ class Player
     protected $maxCharacters;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Character")
-     * @ORM\JoinTable(name="players_characters",
+     * @ORM\ManyToMany(targetEntity="PlayerCharacter")
+     * @ORM\JoinTable(name="players_player_characters",
      *      joinColumns={@ORM\JoinColumn(name="player_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="character_id", referencedColumnName="id", unique=true)}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="player_character_id", referencedColumnName="object_id", unique=true)}
      *      )
      */
-    protected $characters;
+    protected $playerCharacters;
     
     /**
      *  @ORM\OneToMany(targetEntity="PlayerSession", mappedBy="player")
@@ -102,26 +97,6 @@ class Player
     }
 
     /**
-     * Add characters
-     *
-     * @param Anh\SwgManagerBundle\Entity\Character $characters
-     */
-    public function addCharacters(\Anh\SwgManagerBundle\Entity\Character $characters)
-    {
-        $this->characters[] = $characters;
-    }
-
-    /**
-     * Get characters
-     *
-     * @return Doctrine\Common\Collections\Collection 
-     */
-    public function getCharacters()
-    {
-        return $this->characters;
-    }
-
-    /**
      * Add sessions
      *
      * @param Anh\SwgManagerBundle\Entity\PlayerSession $sessions
@@ -139,5 +114,35 @@ class Player
     public function getSessions()
     {
         return $this->sessions;
+    }
+
+    /**
+     * Add playerCharacters
+     *
+     * @param Anh\SwgManagerBundle\Entity\PlayerCharacter $playerCharacters
+     */
+    public function addPlayerCharacters(\Anh\SwgManagerBundle\Entity\PlayerCharacter $playerCharacters)
+    {
+        $this->playerCharacters[] = $playerCharacters;
+    }
+
+    /**
+     * Get playerCharacters
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getPlayerCharacters()
+    {
+        return $this->playerCharacters;
+    }
+
+    /**
+     * Set id
+     *
+     * @param bigint $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 }

@@ -1,5 +1,5 @@
 
-INSERT INTO `starting_location` (`location_id`, `location`, `planet_id`, `x`, `y`, `z`, `description`, `radius`, `heading`) VALUES
+INSERT INTO `starting_location` (`location_id`, `location`, `scene_id`, `x`, `y`, `z`, `description`, `radius`, `heading`) VALUES
 (1, 'bestine', 9, -1290, 0, -3590, 'Bestine, Tatooine', 3, 180),
 (2, 'mos_espa', 9, -2902, 0, 2130, 'Mos Espa, Tatooine', 3, 180),
 (3, 'mos_eisley', 9, 3528, 0, -4804, 'Mos Eisley, Tatooine', 3, 180),

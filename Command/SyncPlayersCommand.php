@@ -34,21 +34,21 @@ class SyncPlayersCommand extends ContainerAwareCommand
 
         $doctrine = $this->getContainer()->get('doctrine');
 
-        $accounts = $doctrine->getRepository('AnhGalaxyManagerBundle:Account')
+        $accounts = $doctrine->getEntityManager('galaxy_manager')->getRepository('AnhGalaxyManagerBundle:Account')
                              ->findAll();
 
         foreach($accounts as $account) {
             $player = $doctrine->getRepository('AnhSwgManagerBundle:Player')
-                             ->findOneByReferenceId($account->getId());
+                             ->findOneById($account->getId());
 
             if (!$player) {
                 $output->writeln('<info>Adding player entry for user: '. $account->getUsername() .'</info>');
 
                 $player = new Player();
-                $player->setReferenceId($account->getId());
+                $player->setId($account->getId());
                 $player->setMaxCharacters($maxAccounts);
 
-                $em = $doctrine->getEntityManager();
+                $em = $doctrine->getEntityManager('galaxy');
                 $em->persist($player);
                 $em->flush();
             }
