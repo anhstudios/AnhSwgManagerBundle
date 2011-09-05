@@ -1,5 +1,5 @@
-DROP PROCEDURE IF EXISTS `sp_GetPlayerCharacter`;
-CREATE PROCEDURE `sp_GetPlayerCharacter` (
+DROP PROCEDURE IF EXISTS `sp_SavePlayerCharacter`;
+CREATE PROCEDURE `sp_SavePlayerCharacter` (
     IN object_id BIGINT(20), IN player_id BIGINT(20), IN archived TINYINT(1)
 )
 BEGIN
