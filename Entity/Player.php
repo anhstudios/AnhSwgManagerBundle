@@ -17,9 +17,14 @@ class Player
     /**
      * @ORM\Id
      * @ORM\Column(type="bigint")
-     * @ORM\generatedValue(strategy="NONE")
+     * @ORM\generatedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+     * @ORM\Column(type="bigint")
+     */
+    protected $referenceId;
 
     /**
      * @ORM\Column(type="integer")

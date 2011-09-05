@@ -45,7 +45,7 @@ class SyncPlayersCommand extends ContainerAwareCommand
                 $output->writeln('<info>Adding player entry for user: '. $account->getUsername() .'</info>');
 
                 $player = new Player();
-                $player->setId($account->getId());
+                $player->setReferenceId($account->getId());
                 $player->setMaxCharacters($maxAccounts);
 
                 $em = $doctrine->getEntityManager('galaxy');
