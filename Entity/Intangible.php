@@ -18,10 +18,50 @@ class Intangible extends Object
     /**
      * @ORM\Column(type="string", length="255", name="stf_detail_file")
      */
-    private $stfDetailFile;
+    protected $stfDetailFile;
 
     /**
      * @ORM\Column(type="string", length="255", name="stf_detail_string")
      */
-    private $stfDetailString;
+    protected $stfDetailString;
+
+    /**
+     * Set stfDetailFile
+     *
+     * @param string $stfDetailFile
+     */
+    public function setStfDetailFile($stfDetailFile)
+    {
+        $this->stfDetailFile = $stfDetailFile;
+    }
+
+    /**
+     * Get stfDetailFile
+     *
+     * @return string 
+     */
+    public function getStfDetailFile()
+    {
+        return $this->stfDetailFile;
+    }
+
+    /**
+     * Set stfDetailString
+     *
+     * @param string $stfDetailString
+     */
+    public function setStfDetailString($stfDetailString)
+    {
+        $this->stfDetailString = $stfDetailString;
+    }
+
+    /**
+     * Get stfDetailString
+     *
+     * @return string 
+     */
+    public function getStfDetailString()
+    {
+        return $this->stfDetailString;
+    }
 }
