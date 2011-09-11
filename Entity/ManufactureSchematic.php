@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="player")
+ * @ORM\Table(name="manufacture_schematic")
  */
-class Player extends Object
+class ManufactureSchematic extends Object
 {}

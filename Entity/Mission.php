@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="player")
+ * @ORM\Table(name="mission")
  */
-class Player extends Object
+class Mission extends Object
 {}

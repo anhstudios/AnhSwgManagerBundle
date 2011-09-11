@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="player")
+ * @ORM\Table(name="factory_crate")
  */
-class Player extends Object
+class FactoryCrate extends Object
 {}
