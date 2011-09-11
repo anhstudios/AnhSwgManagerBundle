@@ -44,11 +44,7 @@ class Scene
     protected $terrain;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Object")
-     * @ORM\JoinTable(name="scenes_objects",
-     *      joinColumns={@ORM\JoinColumn(name="scene_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="object_id", referencedColumnName="id", unique=true)}
-     *      )
+     * @ORM\OneToMany(targetEntity="Object", mappedBy="scene")
      */
     protected $objects;
 
